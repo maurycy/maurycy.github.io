@@ -1,0 +1,56 @@
+baseURL = "https://maurycy.com"
+languageCode = "en"
+DefaultContentLanguage = "en"
+title = "maurycy"
+theme = "maurycy-anatole"
+summarylength = 10
+enableEmoji = true
+
+# Enable Disqus
+disqusShortname = "maurycy"
+
+# Google Analytics
+googleAnalytics = "UA-140790555-4"
+
+[params]
+title = "maurycy's blog"
+author = "maurycy"
+description = "I'm Maurycy"
+profilePicture = "images/profile.jpg"
+keywords = ""
+favicon = "favicons/"
+customCss = []
+
+
+## Math settings
+[params.math]
+enable = true  # options: true, false. Enable math support globally, default: false. You can always enable math on per page.
+use = "mathjax"  # options: "katex", "mathjax". default is "katex".
+
+## Social links
+[[params.socialIcons]]
+icon = "fa-envelope"
+title = "e-mail"
+url = "mailto:maurycy@maurycy.com"
+
+[[params.socialIcons]]
+# icon = "fa-newspaper"
+icon = "fa-newspaper-o"
+title = "My Newsletter"
+url = "https://tinyletter.com/maurycy"
+
+[[params.socialIcons]]
+icon = "fa-github"
+title = "GitHub"
+url = "https://github.com/maurycy"
+
+## Menu items
+
+[menu]
+
+  [[menu.main]]
+  name = "Posts"
+  weight = 50
+  identifier = "posts"
+  url = "/"
+

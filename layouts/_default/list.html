@@ -1,0 +1,16 @@
+{{ define "main" }}
+<div class="archive animated fadeInDown">
+
+    <ul class="list-with-title">
+      {{ range .Pages }}
+      <div class="listing-title">{{ .Title }}</div>
+      <ul class="listing">
+        <div class="listing-item">
+            <div class="listing-post"><a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a>
+              <div class="post-time"><span class="date">{{.Date.Format "Jan 2" }}</span></div>
+            </div>
+          </div>
+    </ul>
+    {{ end }}
+  </div>
+{{ end }}
