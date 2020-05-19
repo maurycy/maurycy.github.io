@@ -12,14 +12,12 @@
     
     
     <item>
-      <title>Hello World</title>
+      <title>99.95% API Uptime Without New Servers</title>
       <link>https://maurycy.com/posts/hello-world/</link>
       <pubDate>Mon, 18 May 2020 18:01:23 +0200</pubDate>
       
       <guid>https://maurycy.com/posts/hello-world/</guid>
-      <description>你好，世界！
-🦊
-# Solve the quadratic equation ax**2 + bx + c = 0 # import complex math module import cmath a = 1 b = 5 c = 6 # calculate the discriminant d = (b**2) - (4*a*c) # find two solutions sol1 = (-b-cmath.</description>
+      <description>elo</description>
     </item>
     
   </channel>

@@ -15,8 +15,8 @@ googleAnalytics = "UA-140790555-4"
 [params]
 title = "maurycy's blog"
 author = "maurycy"
-description = "I'm Maurycy"
-profilePicture = "images/profile.jpg"
+description = "Maybe I love you so much I love you no matter who you are pretending to be. Tell them I hate them. Bender, hurry! This fuel's expensive!"
+profilePicture = "images/maurycy.jpg"
 keywords = ""
 favicon = "favicons/"
 customCss = []
@@ -43,14 +43,3 @@ url = "https://tinyletter.com/maurycy"
 icon = "fa-github"
 title = "GitHub"
 url = "https://github.com/maurycy"
-
-## Menu items
-
-[menu]
-
-  [[menu.main]]
-  name = "Posts"
-  weight = 50
-  identifier = "posts"
-  url = "/"
-

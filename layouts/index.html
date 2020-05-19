@@ -1,5 +1,5 @@
 {{ define "main" }}
-  {{ range where .Pages "Section" "posts" }}
+  {{ range where .Site.RegularPages "Section" "posts" }}
   <div class="post animated fadeInDown">
     <div class="post-title">
       <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a>

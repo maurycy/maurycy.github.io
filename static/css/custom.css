@@ -1,0 +1,37 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Arvo:wght@700&family=EB+Garamond:ital,wght@1,800&family=Fira+Code&family=Open+Sans:wght@600;800&family=Roboto:ital,wght@0,300;0,400;0,700;1,300&display=swap');
+
+p {
+    font-family: 'Roboto',sans-serif;
+    font-size: 15px;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Open Sans',sans-serif;
+}
+
+.post .post-content h3 {
+    font-family: 'Arvo', sans-serif;
+    font-size: 36px;
+    color: #000;
+}
+
+.post .post-title {
+    padding-bottom: 25px;
+}
+
+.sidebar {
+    width: 420px;
+}
+
+.content {
+    width: 70%;
+}
+
+.post code {
+    font-family: 'Fira Code', monospace;
+}
+
+.sidebar .logo-title .title h3 {
+    font-family: 'EB Garamond', serif;
+}
+*/
