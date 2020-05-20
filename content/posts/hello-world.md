@@ -27,18 +27,44 @@ application, send it to the cloud storage first with the attributes as
 [the object metadata](https://cloud.google.com/storage/docs/metadata), and
 then send the final request using [a serverless function](https://cloud.google.com/functions/docs/calling/storage).
 
-
 I'm using Google Cloud Storage here, because I like it, but it works perfectly
-fine with literally any cloud that lets you to attach, including
-[Amazon S3 object metadata](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-metadata).
+fine with literally any cloud that lets you to attach object metadata and
+fires a trigger after upload. In the Amazon S3 nomenclature, we'd deal with
+[object medata](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-metadata),
+[event notifications](https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html) and
+[AWS Lambda](https://aws.amazon.com/lambda/).
+
+## How to Send a Request?
 
 ```python
-friends = ['john', 'pat', 'gary', 'michael']
-for i, name in enumerate(friends):
-    print ("iteration {iteration} is {name}".format(iteration=i, name=name))
-```
+# Lorem ipsum Python code
 
-The approach
+# importing the hashlib module
+import hashlib
+
+def hash_file(filename):
+   """"This function returns the SHA-1 hash
+   of the file passed into it"""
+
+   # make a hash object
+   h = hashlib.sha1()
+
+   # open file for reading in binary mode
+   with open(filename,'rb') as file:
+
+       # loop till the end of the file
+       chunk = 0
+       while chunk != b'':
+           # read only 1024 bytes at a time
+           chunk = file.read(1024)
+           h.update(chunk)
+
+   # return the hex representation of digest
+   return h.hexdigest()
+
+message = hash_file("track1.mp3")
+print(message)
+```
 
 ## Asynchronous
 
