@@ -1,7 +1,7 @@
 ---
 title: "Run a Static Site On Google Cloud Run"
 date: 2019-06-21T14:39:03+02:00
-draft: false
+draft: true
 ---
 
 Google Cloud Run is a newly announced Google Cloud service. The idea is simple: **it’s Docker on serverless**. Google Cloud Run is similar to Google Cloud Function: you write code without worrying about infrastructure.

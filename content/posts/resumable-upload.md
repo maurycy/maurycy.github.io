@@ -1,7 +1,7 @@
 ---
 title: "Do Not Upload Files To Your App"
 date: 2020-05-20T13:10:39+02:00
-draft: false
+draft: true
 ---
 
 THESE DAYS, a regular web app outsources file handing to a cloud provider, like
