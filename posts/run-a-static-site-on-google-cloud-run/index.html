@@ -65,14 +65,14 @@
 <p>What makes it unique is that <strong>Google Cloud Run works directly with Docker containers</strong>, exposes <code>Dockerfile</code>, supports any programming language, custom domains and has much longer timeouts (15 minutes). Google Cloud Run on GKE also supports Websockets and GPUs/TPUs making it interesting choice for resource-intensive applications, like machine learning.</p>
 <p>In this guide I’m going to show you how to dive into Google Cloud Run by running a simple static site in few minutes, using literally one command. In a word, your own poor man’s Netlify. This is one of the easiest ways to get the taste of the platform, even if there are definitely better use cases. (Please familiarize yourself with <a href="https://cloud.google.com/run/pricing">the Pricing</a> first, but don’t worry: you likely won’t pay a dime thanks to the Free Tier.)</p>
 <p>Let’s start with actually building a static website. There are few options, from creating one from scratch to using a framework, a static site generator, like <a href="https://jekyllrb.com/">Jekyll</a> or <a href="https://gohugo.io/">Hugo</a>. I will go with the latter since I like it but they’re all valid options. I’d gently <a href="https://gohugo.io/getting-started/quick-start/">ask you to familiarize yourself with the Hugo’s Quick Start</a> first:</p>
-<pre><code>$ brew install hugo
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ brew install hugo
 $ hugo new site static-google-cloud-run
 $ cd static-google-cloud-run
 $ git init
 $ git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke
-$ echo 'theme = &quot;ananke&quot;' &gt;&gt; config.toml
+$ echo <span style="color:#e6db74">&#39;theme = &#34;ananke&#34;&#39;</span> &gt;&gt; config.toml
 $ hugo new posts/hello-world.md
-</code></pre><p>Now, using your favourite editor, edit the <code>content/posts/hello-world.md</code> by adding some content and removing the <code>draft: true</code> line that effectively publishes it:</p>
+</code></pre></div><p>Now, using your favourite editor, edit the <code>content/posts/hello-world.md</code> by adding some content and removing the <code>draft: true</code> line that effectively publishes it:</p>
 <pre><code>---
 title: &quot;Hello World&quot;
 date: 2019-06-18T03:15:54+02:00
@@ -84,9 +84,9 @@ languageCode = &quot;en-us&quot;
 title = &quot;Static Site on Google Cloud Run&quot;
 theme = &quot;ananke&quot;
 </code></pre><p>We can generate the HTML and run the server now:</p>
-<pre><code>$ hugo
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ hugo
 $ hugo server
-</code></pre><p>The default URL <a href="http://localhost:1313/">http://localhost:1313/</a> should show us the following:</p>
+</code></pre></div><p>The default URL <a href="http://localhost:1313/">http://localhost:1313/</a> should show us the following:</p>
 <p><img src="/images/1_zxgoMYMr2I-tZR1uV0Kwkg.png" alt="It’s not beautiful but, hey, we’ve spent only a minute on this, right?"></p>
 <p>Let’s dockerize a static site. The problem with using Hugo not only as a static site generator but also as a server is performance and lack of good Docker images. <a href="https://www.nginx.com/">Nginx</a> is one of the fastest web servers out there, with standard Docker image provided and very little performance footprint.</p>
 <p>This our <code>Dockerfile</code>:</p>
@@ -113,16 +113,16 @@ CMD envsubst &lt; /etc/nginx/conf.d/default.template &gt; /etc/nginx/conf.d/defa
 </blockquote>
 <p>Clear?</p>
 <p>If so, let’s build and run the image:</p>
-<pre><code>$ docker build -t static-google-cloud-run .
-$ docker run -p 1312:1312 -e PORT=1312 static-google-cloud-run
-</code></pre><p>The <a href="http://localhost:1312/">http://localhost:1312/</a> should return us the same as above:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ docker build -t static-google-cloud-run .
+$ docker run -p 1312:1312 -e PORT<span style="color:#f92672">=</span><span style="color:#ae81ff">1312</span> static-google-cloud-run
+</code></pre></div><p>The <a href="http://localhost:1312/">http://localhost:1312/</a> should return us the same as above:</p>
 <p><img src="/images/1_tmfJEYH0gug3kjek71A4qw.png" alt="Still not beautiful but, hey, we’ve spent only two minutes on this, right?"></p>
 <p>Let’s Google Cloud Run our static site Docker image! This is the final step. I assume that you’ve got <a href="https://cloud.google.com/sdk/">Google Cloud SDK</a> installed, <a href="https://console.cloud.google.com/marketplace/details/google-cloud-platform/cloud-run">enabled Google Cloud Run</a>, and you’re familiar with the <a href="https://cloud.google.com/sdk/gcloud/">gcloud CLI tool</a>. My Google Cloud project name is <code>maurycy-sandbox</code>, so please replace it with any you’re using.</p>
 <p>First, let’s build the image using <a href="https://cloud.google.com/cloud-build/">Google Cloud Build</a>:</p>
-<pre><code>$ gcloud builds submit --tag gcr.io/maurycy-sandbox/static-google-cloud-run
-</code></pre><p>After few minutes, you can deploy the service:</p>
-<pre><code>$ gcloud beta run deploy static-google-clod-run --image gcr.io/maurycy-sandbox/static-google-cloud-run
-</code></pre><p>The console will output:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ gcloud builds submit --tag gcr.io/maurycy-sandbox/static-google-cloud-run
+</code></pre></div><p>After few minutes, you can deploy the service:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ gcloud beta run deploy static-google-clod-run --image gcr.io/maurycy-sandbox/static-google-cloud-run
+</code></pre></div><p>The console will output:</p>
 <pre><code>Allow unauthenticated invocations to [static-google-clod-run] (y/N)? y
 Deploying container to Cloud Run service [static-google-clod-run] in project [maurycy-sandbox] region [us-central1]
 ⠶ Deploying new service... Creating Resources.
@@ -134,8 +134,8 @@ Service [static-google-clod-run] revision [static-google-clod-run-00001] has bee
 <p>![Not beautiful but, hey, only three minutes, right?]</p>
 <p>Hurray! We’re done: we’ve got an inifnitely scalable static site on Google Cloud Run. You can now even <a href="https://cloud.google.com/run/docs/mapping-custom-domains">map your own domain</a>.</p>
 <p>PS. Please don’t forget to stop the service, either with <a href="https://console.cloud.google.com/run">the Console UI</a> or gcloud:</p>
-<pre><code>$ gcloud beta run services delete static-google-cloud-run
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ gcloud beta run services delete static-google-cloud-run
+</code></pre></div>
     </div>
     <div class="post-footer">
       <div class="info">
