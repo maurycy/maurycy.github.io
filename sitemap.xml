@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://maurycy.com/posts/hello-world/</loc>
+    <loc>https://maurycy.com/posts/hello-world.html</loc>
     <lastmod>2020-06-02T14:40:57+02:00</lastmod>
   </url>
   
@@ -13,16 +13,16 @@
   </url>
   
   <url>
-    <loc>https://maurycy.com/posts/</loc>
+    <loc>https://maurycy.com/posts.html</loc>
     <lastmod>2020-06-02T14:40:57+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://maurycy.com/categories/</loc>
+    <loc>https://maurycy.com/categories.html</loc>
   </url>
   
   <url>
-    <loc>https://maurycy.com/tags/</loc>
+    <loc>https://maurycy.com/tags.html</loc>
   </url>
   
 </urlset>

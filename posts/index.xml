@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on maurycy</title>
-    <link>https://maurycy.com/posts/</link>
+    <link>https://maurycy.com/posts.html</link>
     <description>Recent content in Posts on maurycy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
@@ -13,10 +13,10 @@
     
     <item>
       <title>Hello, World!</title>
-      <link>https://maurycy.com/posts/hello-world/</link>
+      <link>https://maurycy.com/posts/hello-world.html</link>
       <pubDate>Tue, 02 Jun 2020 14:40:57 +0200</pubDate>
       
-      <guid>https://maurycy.com/posts/hello-world/</guid>
+      <guid>https://maurycy.com/posts/hello-world.html</guid>
       <description>The old blog is being moved here&amp;hellip;</description>
     </item>
     
