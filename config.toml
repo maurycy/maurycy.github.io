@@ -15,7 +15,7 @@ googleAnalytics = "UA-140790555-4"
 [params]
 title = "maurycy's blog"
 author = "maurycy"
-description = "Maybe I love you so much I love you no matter who you are pretending to be. Tell them I hate them. Bender, hurry! This fuel's expensive!"
+description = "A backend and data engineer with more than 10 years of experience."
 profilePicture = "images/maurycy.jpg"
 keywords = ""
 favicon = "favicons/"
