@@ -6,18 +6,18 @@
     <description>Recent content in Posts on maurycy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 02 Jun 2020 14:40:57 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 21 Jun 2019 14:39:03 +0200</lastBuildDate>
     
 	<atom:link href="https://maurycy.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Hello, World!</title>
-      <link>https://maurycy.com/posts/hello-world/</link>
-      <pubDate>Tue, 02 Jun 2020 14:40:57 +0200</pubDate>
+      <title>Run a Static Site On Google Cloud Run</title>
+      <link>https://maurycy.com/posts/run-a-static-site-on-google-cloud-run/</link>
+      <pubDate>Fri, 21 Jun 2019 14:39:03 +0200</pubDate>
       
-      <guid>https://maurycy.com/posts/hello-world/</guid>
-      <description>The old blog is being moved here&amp;hellip;</description>
+      <guid>https://maurycy.com/posts/run-a-static-site-on-google-cloud-run/</guid>
+      <description>Google Cloud Run is a newly announced Google Cloud service. The idea is simple: it’s Docker on serverless.</description>
     </item>
     
   </channel>
