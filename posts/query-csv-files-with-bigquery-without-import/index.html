@@ -74,7 +74,7 @@ simple SQL queries.</p>
 <p>People who don&rsquo;t use <a href="https://cloud.google.com/bigquery">BigQuery</a>, a cloud
 data warehouse, on a daily basis may be pleased to hear that starting with it
 might be as simple as dropping your CSV files into Google Cloud Storage or
-Google Drive.</p>
+Google Drive. The technique is known as <a href="https://cloud.google.com/bigquery/external-data-sources">querying external data sources</a>.</p>
 <p><a href="https://en.wikipedia.org/wiki/Comma-separated_values">Comma-separated files</a> are
 lingua franca of data, easily exported and imported by nearly every data tool,
 from spreadsheets to databases (including NoSQL!), so it&rsquo;s especially handy.</p>
@@ -194,7 +194,7 @@ Table maurycy-sandbox:csv_for_bigquery.nyc_parking_violations_2019
                     |- Double_Parking_Violation: string
 </code></pre></div><p>Note the <code>EXTERNAL</code> marker next to the table definition.</p>
 <h2 id="conclusion">Conclusion</h2>
-<p>PS. Please don’t forget to clean, and delete both the dataset and the data, either with <a href="https://console.cloud.google.com/bigquery">the Console UI</a> or <code>bq</code>:</p>
+<p>PS. Please don’t forget to clean by deleting both the dataset and the data, either with <a href="https://console.cloud.google.com/bigquery">the Console</a> or <code>bq</code>:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ bq rm csv_for_bigquery.nyc_parking_violations_2019
 rm: remove table <span style="color:#e6db74">&#39;maurycy-sandbox:csv_for_bigquery.nyc_parking_violations_2019&#39;</span>? <span style="color:#f92672">(</span>y/N<span style="color:#f92672">)</span> y
 $ bq rm maurycy-sandbox:csv_for_bigquery
