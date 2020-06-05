@@ -114,9 +114,10 @@ Summons Number,Plate ID,Registration State,Plate Type,Issue Date,Violation Code,
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ gsutil mb gs://maurycy-sandbox-csv-for-bigquery/
 Creating gs://maurycy-sandbox-csv-for-bigquery/...
 </code></pre></div><p>Then, copy the data to the bucket:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ gsutil cp Parking_Violations_Issued_-_Fiscal_Year_2019.csv gs://maurycy-sandbox-csv-for-bigquery/Parking_Violations_Issued_-_Fiscal_Year_2019.csv
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ gsutil cp Parking_Violations_Issued_-_Fiscal_Year_2019.csv gs://maurycy-sandbox-csv-for-bigquery/
 Copying file://Parking_Violations_Issued_-_Fiscal_Year_2019.csv <span style="color:#f92672">[</span>Content-Type<span style="color:#f92672">=</span>text/csv<span style="color:#f92672">]</span>...
-- <span style="color:#f92672">[</span><span style="color:#ae81ff">1</span> files<span style="color:#f92672">][</span>  1.9 GiB/  1.9 GiB<span style="color:#f92672">]</span>
+
+<span style="color:#ae81ff">\ </span><span style="color:#f92672">[</span><span style="color:#ae81ff">1</span> files<span style="color:#f92672">][</span>  1.9 GiB/  1.9 GiB<span style="color:#f92672">]</span>    9.2 MiB/s
 Operation completed over <span style="color:#ae81ff">1</span> objects/1.9 GiB.
 </code></pre></div><h2 id="bigquery-dataset">BigQuery Dataset</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ bq mkdef <span style="color:#ae81ff">\
@@ -199,11 +200,10 @@ Table maurycy-sandbox:csv_for_bigquery.nyc_parking_violations_2019
 rm: remove table <span style="color:#e6db74">&#39;maurycy-sandbox:csv_for_bigquery.nyc_parking_violations_2019&#39;</span>? <span style="color:#f92672">(</span>y/N<span style="color:#f92672">)</span> y
 $ bq rm maurycy-sandbox:csv_for_bigquery
 rm: remove dataset <span style="color:#e6db74">&#39;maurycy-sandbox:csv_for_bigquery&#39;</span>? <span style="color:#f92672">(</span>y/N<span style="color:#f92672">)</span> y
-$ gsutil rm gs://maurycy-sandbox-csv-for-bigquery/Parking_Violations_Issued_-_Fiscal_Year_2019.csv
+$ gsutil rm -r gs://maurycy-sandbox-csv-for-bigquery/
 Removing gs://maurycy-sandbox-csv-for-bigquery/Parking_Violations_Issued_-_Fiscal_Year_2019.csv...
 / <span style="color:#f92672">[</span><span style="color:#ae81ff">1</span> objects<span style="color:#f92672">]</span>
 Operation completed over <span style="color:#ae81ff">1</span> objects.
-$ gsutil rb gs://maurycy-sandbox-csv-for-bigquery/
 Removing gs://maurycy-sandbox-csv-for-bigquery/...
 </code></pre></div>
     </div>
