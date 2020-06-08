@@ -1,70 +1,31 @@
 <!DOCTYPE html>
 <html lang="en"><head>
     <title>maurycy | Run a Static Site On Google Cloud Run </title>
-    <meta charset="utf-8"><meta name="generator" content="Hugo 0.72.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-    <meta name="description" content="A backend and data engineer with more than 10 years of experience.">
-    <meta name="robots" content="noindex, nofollow, noarchive">
-    
-    <link rel="stylesheet" href="https://maurycy.com/css/style.min.dad68694f67c532e8ff0532b54c6e42b7ea1c4ef3c89f02db437fcf63ef9ff0f.css" integrity="sha256-2taGlPZ8Uy6P8FMrVMbkK36hxO88ifAttDf89j75/w8=" type="text/css">
-    
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <base href="https://maurycy.com">
-    
-    <link rel="shortcut icon" href="https://maurycy.com/favicons/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://maurycy.com/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://maurycy.com/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://maurycy.com/favicons/favicon-16x16.png">
 
+    <meta name="description" content="A backend and data engineer with more than 10 years of experience.">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="generator" content="Hugo 0.72.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    
+    <link rel="stylesheet" href="https://maurycy.com/sass/main.min.ec5f7e278d398e6bf51911682f4dd74d0c47deba61ab85edc6d2bbeed2ff2f3f.css" integrity="sha256-7F9&#43;J405jmv1GRFoL03XTQxH3rphq4XtxtK77tL/Lz8=" type="text/css">
+    
+
+    <base href="https://maurycy.com">
     <link rel="canonical" href="https://maurycy.com/posts/run-a-static-site-on-google-cloud-run/">
 </head>
-<body><div class="sidebar animated fadeInDown">
-    <div class="logo-title">
-      <div class="title">
-        <img src="https://maurycy.com/images/maurycy.jpg" alt="profile picture">
-        <h3 title=""><a href="/">maurycy&#39;s blog</a></h3>
-        <div class="description">
-          <p>A backend and data engineer with more than 10 years of experience.</p>
-        </div>
-      </div>
-    </div>
-    <ul class="social-links">
-        
-        <a href="mailto:maurycy@maurycy.com" rel="me" >
-          <i class="fa fa-envelope" aria-hidden="true" title="e-mail"></i>
-        </a>
-        
-        <a href="https://tinyletter.com/maurycy" rel="me" >
-          <i class="fa fa-newspaper-o" aria-hidden="true" title="My Newsletter"></i>
-        </a>
-        
-        <a href="https://github.com/maurycy" rel="me" >
-          <i class="fa fa-github" aria-hidden="true" title="GitHub"></i>
-        </a>
-        
-    </ul>
-</div>
-<div class="main">
-            <div class="page-top animated fadeInDown">
-    <div class="nav">
-        
-        
-    </div>
-</div>
-            <div class="autopagerize_page_element">
-                <div class="content">
-<div class="post animated fadeInDown">
-    <div class="post-content">
+<body>
+    <div class="ribbon-top"></div>
 
-      <div class="post-title">
-        <h3>Run a Static Site On Google Cloud Run
-        </h3>
-        
-        <div class="info">
-          <i class="fa fa-sun-o"></i><span class="date">Fri, Jun 21, 2019</span>
-          <i class="fa fa-clock-o"></i><span class="reading-time">4-minute read</span>
-        </div>
-        
-        </div>
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col-8">
+                
+
+<article>
+    <h1>Run a Static Site On Google Cloud Run</h1>
+
+    <p class="font-weight-light">Jun 21, 2019</p>
 
     <p>Google Cloud Run is a newly announced Google Cloud service. The idea is simple: <strong>it’s Docker on serverless</strong>. Google Cloud Run is similar to Google Cloud Function: you write code without worrying about infrastructure.</p>
 <p>What makes it unique is that <strong>Google Cloud Run works directly with Docker containers</strong>, exposes <code>Dockerfile</code>, supports any programming language, custom domains and has much longer timeouts (15 minutes). Google Cloud Run on GKE also supports Websockets and GPUs/TPUs making it interesting choice for resource-intensive applications, like machine learning.</p>
@@ -92,7 +53,8 @@ theme = &quot;ananke&quot;
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ hugo
 $ hugo server
 </code></pre></div><p>The default URL <a href="http://localhost:1313/">http://localhost:1313/</a> should show us the following:</p>
-<p><img src="/images/1_zxgoMYMr2I-tZR1uV0Kwkg.png" alt="It’s not beautiful but, hey, we’ve spent only a minute on this, right?"></p>
+<p><img src="/images/1_zxgoMYMr2I-tZR1uV0Kwkg.png" alt="It’s not beautiful but, hey, we’ve spent only a minute on this, right?"  class="img-fluid" />
+</p>
 <p>Let’s dockerize a static site. The problem with using Hugo not only as a static site generator but also as a server is performance and lack of good Docker images. <a href="https://www.nginx.com/">Nginx</a> is one of the fastest web servers out there, with standard Docker image provided and very little performance footprint.</p>
 <p>This our <code>Dockerfile</code>:</p>
 <pre><code># Use a nginx Docker image
@@ -121,7 +83,8 @@ CMD envsubst &lt; /etc/nginx/conf.d/default.template &gt; /etc/nginx/conf.d/defa
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ docker build -t static-google-cloud-run .
 $ docker run -p 1312:1312 -e PORT<span style="color:#f92672">=</span><span style="color:#ae81ff">1312</span> static-google-cloud-run
 </code></pre></div><p>The <a href="http://localhost:1312/">http://localhost:1312/</a> should return us the same as above:</p>
-<p><img src="/images/1_tmfJEYH0gug3kjek71A4qw.png" alt="Still not beautiful but, hey, we’ve spent only two minutes on this, right?"></p>
+<p><img src="/images/1_tmfJEYH0gug3kjek71A4qw.png" alt="Still not beautiful but, hey, we’ve spent only two minutes on this, right?"  class="img-fluid" />
+</p>
 <p>Let’s Google Cloud Run our static site Docker image! This is the final step. I assume that you’ve got <a href="https://cloud.google.com/sdk/">Google Cloud SDK</a> installed, <a href="https://console.cloud.google.com/marketplace/details/google-cloud-platform/cloud-run">enabled Google Cloud Run</a>, and you’re familiar with the <a href="https://cloud.google.com/sdk/gcloud/">gcloud CLI tool</a>. My Google Cloud project name is <code>maurycy-sandbox</code>, so please replace it with any you’re using.</p>
 <p>First, let’s build the image using <a href="https://cloud.google.com/cloud-build/">Google Cloud Build</a>:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ gcloud builds submit --tag gcr.io/maurycy-sandbox/static-google-cloud-run
@@ -136,22 +99,25 @@ Deploying container to Cloud Run service [static-google-clod-run] in project [ma
 Done.
 Service [static-google-clod-run] revision [static-google-clod-run-00001] has been deployed and is serving traffic at https://static-google-clod-run-6mirbza5oa-uc.a.run.app
 </code></pre><p>The last line is the most important. It will be different for you but this is where the site is hosted unless we set a custom domain:</p>
-<p><img src="/images/1_Ed1uBQXKA-830l1cmdxE7A.png" alt="Not beautiful but, hey, only three minutes, right?"></p>
+<p><img src="/images/1_Ed1uBQXKA-830l1cmdxE7A.png" alt="Not beautiful but, hey, only three minutes, right?"  class="img-fluid" />
+</p>
 <p>Hurray! We’re done: we’ve got an inifnitely scalable static site on Google Cloud Run. You can now even <a href="https://cloud.google.com/run/docs/mapping-custom-domains">map your own domain</a>.</p>
 <p>PS. Please don’t forget to stop the service, either with <a href="https://console.cloud.google.com/run">the Console</a> or <code>gcloud</code>:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ gcloud beta run services delete static-google-cloud-run
-</code></pre></div>
-    </div>
-    <div class="post-footer">
-      <div class="info">
-        
-        
-      </div>
-    </div>
+</code></pre></div><div class="card mb-4">
+    <div class="card-body">
+        <p class="card-text">If you like my content, please consider giving me your email.</p>
 
-    
-    <div id="fb_comments_container">
-      <h2>Comments</h2>
+        <form class="form-inline" method="post" action="https://tinyletter.com/maurycy">
+            <div class="form-group mr-sm-3">
+                <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="No spam, promise.">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+    </div>
+</div>
+<div class="mb-5">
       <div id="disqus_thread"></div>
 <script type="application/javascript">
     var disqus_config = function () {
@@ -173,27 +139,32 @@ Service [static-google-clod-run] revision [static-google-clod-run-00001] has bee
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
     </div>
-    
+</article>
+
+
+            </div>
+
+            <div class="col-1"></div>
+
+            <div class="col-3"><h2>About me</h2>
+
+<a href="https://maurycy.com"><img src="https://maurycy.com/images/maurycy.jpg" alt="maurycy" class="rounded img-fluid pb-4" /></a>
+
+<p>I'm a data and backend engineer with more than 10 years of experience, <strong>available for consulting</strong>. Full resume available on request.</p>
+
+<p><a href="mailto:maurycy@maurycy.com">maurycy@maurycy.com</a></p>
+</div>
+        </div>
+    </div><footer class="footer">
+    <div class="container">
+    </div>
 </div>
 
-
-                </div>
-            </div>
-        </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </body>
-
-
-
-<script type="text/javascript" src="https://maurycy.com/js/jquery.min.86b1e8f819ee2d9099a783e50b49dff24282545fc40773861f9126b921532e4c.js" integrity="sha256-hrHo&#43;BnuLZCZp4PlC0nf8kKCVF/EB3OGH5EmuSFTLkw="></script>
-
-
-
-
-<script type="text/javascript" src="https://maurycy.com/js/bundle.min.0f9c74cb78f13d1f15f33daff4037c70354f98acfbb97a6f61708966675c3cae.js" integrity="sha256-D5x0y3jxPR8V8z2v9AN8cDVPmKz7uXpvYXCJZmdcPK4="></script>
-
-<script type="text/javascript" src="https://maurycy.com/js/medium-zoom.min.7487768bffcc6aee437cf6a4ac7da5d2ffc61dc63b36316a14122ceb26b34c70.js" integrity="sha256-dId2i//Mau5DfPakrH2l0v/GHcY7NjFqFBIs6yazTHA="></script>
-
-<link rel="stylesheet" href="https://maurycy.com/css/medium-zoom.min.a1468f7a1cce6fe96c4b5483cb4645b85728a32b3abbd598c375a92df16230ef.css" integrity="sha256-oUaPehzOb&#43;lsS1SDy0ZFuFcooys6u9WYw3WpLfFiMO8=" type="text/css">
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
@@ -204,6 +175,4 @@ if (!doNotTrack) {
 }
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
-</html></body>
-
 </html>
