@@ -6,33 +6,28 @@
     <description>Recent content in Posts on maurycy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 16 Jun 2020 17:16:54 +0200</lastBuildDate><atom:link href="https://maurycy.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 16 Jun 2020 17:16:54 +0200</lastBuildDate>
+    <atom:link href="https://maurycy.com/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Best Time to Post on Hacker News</title>
       <link>https://maurycy.com/posts/the-best-time-to-post-on-hacker-news/</link>
       <pubDate>Tue, 16 Jun 2020 17:16:54 +0200</pubDate>
-      
       <guid>https://maurycy.com/posts/the-best-time-to-post-on-hacker-news/</guid>
       <description>I&amp;rsquo;m starting a new blog and I have the ambition of attracting high quality traffic very quickly.</description>
     </item>
-    
     <item>
       <title>Run a Static Site On Google Cloud Run</title>
       <link>https://maurycy.com/posts/run-a-static-site-on-google-cloud-run/</link>
       <pubDate>Fri, 21 Jun 2019 14:39:03 +0200</pubDate>
-      
       <guid>https://maurycy.com/posts/run-a-static-site-on-google-cloud-run/</guid>
       <description>Google Cloud Run is a newly announced Google Cloud service. The idea is simple: it’s Docker on serverless.</description>
     </item>
-    
     <item>
       <title>Just Send a Notification</title>
       <link>https://maurycy.com/posts/just-send-a-notification/</link>
       <pubDate>Sat, 15 Jun 2019 09:01:12 +0200</pubDate>
-      
       <guid>https://maurycy.com/posts/just-send-a-notification/</guid>
       <description>How Slack decides whether to send a notification or not?</description>
     </item>
-    
   </channel>
 </rss>
