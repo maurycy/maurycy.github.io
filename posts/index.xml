@@ -4,7 +4,7 @@
     <title>Posts on maurycy</title>
     <link>https://maurycy.com/posts/</link>
     <description>Recent content in Posts on maurycy</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Tue, 16 Jun 2020 17:16:54 +0200</lastBuildDate>
     <atom:link href="https://maurycy.com/posts/index.xml" rel="self" type="application/rss+xml" />
@@ -13,14 +13,14 @@
       <link>https://maurycy.com/posts/the-best-time-to-post-on-hacker-news/</link>
       <pubDate>Tue, 16 Jun 2020 17:16:54 +0200</pubDate>
       <guid>https://maurycy.com/posts/the-best-time-to-post-on-hacker-news/</guid>
-      <description>I&amp;rsquo;m starting a new blog and I have the ambition of attracting high quality traffic very quickly.</description>
+      <description>&lt;p&gt;I&amp;rsquo;m starting a new blog and I have the ambition of attracting high quality&#xA;traffic very quickly. Marketers recommend scheduling your posts to reach&#xA;the largest audience possible, so what really are the best hours for Hacker&#xA;News, &lt;a href=&#34;https://phys.org/news/2020-06-night-owls-grey-brains-early.html&#34;&gt;a community of night owls&lt;/a&gt;?&lt;/p&gt;</description>
     </item>
     <item>
       <title>Run a Static Site On Google Cloud Run</title>
       <link>https://maurycy.com/posts/run-a-static-site-on-google-cloud-run/</link>
       <pubDate>Fri, 21 Jun 2019 14:39:03 +0200</pubDate>
       <guid>https://maurycy.com/posts/run-a-static-site-on-google-cloud-run/</guid>
-      <description>Google Cloud Run is a newly announced Google Cloud service. The idea is simple: it’s Docker on serverless.</description>
+      <description>&lt;p&gt;Google Cloud Run is a newly announced Google Cloud service. The idea is simple: &lt;strong&gt;it’s Docker on serverless&lt;/strong&gt;. Google Cloud Run is similar to Google Cloud Function: you write code without worrying about infrastructure.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Just Send a Notification</title>
